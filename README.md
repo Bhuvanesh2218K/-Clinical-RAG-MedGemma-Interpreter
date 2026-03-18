@@ -3,6 +3,18 @@
 ### 🏥 Project Overview
 This project showcases a specialized **Retrieval-Augmented Generation (RAG)** pipeline designed for clinical decision support. The system moves beyond standard vector search by implementing a **Hierarchical Clinical Tree**, which categorizes medical knowledge into structured dimensions (State, Emotion, Concern, Risk) to provide grounded, empathetic context to the **MedGemma** model.
 
+### 🖼️ System Visualization
+| System Architecture | Clinical Case Tree |
+|---|---|
+| ![Architecture](images/architecture.png) | ![Case Tree](images/case_tree.png) |
+
+| Retrieval Signals | Session Memory |
+|---|---|
+| ![Retrieval Signal](images/retrieval.png) | ![Session Memory](images/session_memory.png) |
+
+### 💬 Clinical Conversation Example
+![Conversation](images/conversation.png)
+
 ### 🛠 Technical Architecture
 * **LLM Core:** MedGemma (Specialized Medical LLM).
 * **Vector Engine:** Chaturya Vector Engine (Custom 512-dimension embeddings).
@@ -16,7 +28,7 @@ This project showcases a specialized **Retrieval-Augmented Generation (RAG)** pi
     * Implements the logic to construct the four-branch clinical tree (STATE, EMOTION, CONCERN, RISK).
 * **`medgemma-app-notebook.ipynb`**: **[The Application Layer]**
     * Features the inference engine and the RAG-grounding logic.
-    * Includes a stateful conversation handler and prompt engineering for MedGemma.
+    * Includes a stateful conversation handler and session memory management.
 
 ### 🚀 Key Technical Contributions
 * **Dimensional Knowledge Retrieval:** Instead of a flat search, the system retrieves context across four distinct clinical "branches," ensuring a holistic understanding of the patient's physical and emotional state.
